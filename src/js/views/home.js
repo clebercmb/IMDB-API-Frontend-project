@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 
 export const Home = () => {
+	const [topPopularTitles, setTopPopularTitles] = useState([]);
+
 	useEffect(() => {
 		fetch("https://imdb8.p.rapidapi.com/title/get-best-picture-winners", {
 			method: "GET",
@@ -17,6 +19,7 @@ export const Home = () => {
 			})
 			.then(data => {
 				console.log(data);
+				setTopPopularTitles(data);
 			})
 			.catch(err => {
 				console.error(err);
