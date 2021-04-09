@@ -16,10 +16,47 @@ export const Home = () => {
 			}
 		})
 			.then(response => response.json())
-			.then(data => setPopularMovies(data.movie_results))
+			.then(data => {
+				console.log("data", data);
+				let movieA = {
+					poster: "https://picsum.photos/100/100",
+					key: 1,
+					title: "moviename",
+					year: 2023,
+					boxOffice: "$100",
+					plot: "moviescription"
+				};
+				let movieB = {
+					poster: "https://picsum.photos/100/100",
+					key: 1,
+					title: "moviename",
+					year: 2023,
+					boxOffice: "$100",
+					plot: "moviescription"
+				};
+				setPopularMovies([movieA, movieB]);
+				//setPopularMovies(data.movie_results);
+			})
 			.catch(err => {
 				console.error(err);
 			});
+		let movieA = {
+			poster: "https://picsum.photos/100/100",
+			key: 1,
+			title: "moviename",
+			year: 2023,
+			boxOffice: "$100",
+			plot: "moviescription"
+		};
+		let movieB = {
+			poster: "https://picsum.photos/100/100",
+			key: 1,
+			title: "moviename",
+			year: 2023,
+			boxOffice: "$100",
+			plot: "moviescription"
+		};
+		setPopularMovies([movieA, movieB]);
 	}, []);
 
 	useEffect(
@@ -49,7 +86,15 @@ export const Home = () => {
 			<div className="d-flex flex-wrap">
 				{popularMovies.length > 2
 					? popularMovies.map((movie, ind) => {
-							return <MovieCard key={ind} movie={movie} poster={movieDetails[ind].Poster} />;
+							return (
+								<MovieCard
+									key={ind}
+									poster={movie.poster}
+									title={movie.title}
+									year={movie.year}
+									boxOffice={movie.boxOffice}
+								/>
+							);
 					  })
 					: "Loading..."}
 			</div>
