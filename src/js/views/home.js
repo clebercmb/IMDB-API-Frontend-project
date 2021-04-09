@@ -43,15 +43,13 @@ export const Home = () => {
 		[popularMovies]
 	);
 
-	console.log(updatedMovies);
-
 	return (
 		<div className="text-center mt-5">
 			<h1>Top Popular Movies in the US</h1>
 			<div className="d-flex flex-wrap">
 				{popularMovies.length > 2
 					? popularMovies.map((movie, ind) => {
-							return <MovieCard key={ind} movie={movie} />;
+							return <MovieCard key={ind} movie={movie} poster={movieDetails[ind].Poster} />;
 					  })
 					: "Loading..."}
 			</div>
