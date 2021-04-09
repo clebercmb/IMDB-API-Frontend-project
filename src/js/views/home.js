@@ -1,40 +1,56 @@
 import React, { useEffect, useState } from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+
+import { MovieCard } from "../component/MovieCard";
 import "../../styles/home.scss";
 
 export const Home = () => {
-	const [topPopularTitles, setTopPopularTitles] = useState([]);
+	const [popularMovies, setPopularMovies] = useState([]);
+	const [movieDetails, setMovieDetails] = useState([]);
+	var updatedMovies = [];
 
 	useEffect(() => {
-		fetch("https://imdb8.p.rapidapi.com/title/get-best-picture-winners", {
+		fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-boxoffice-movies&page=1", {
 			method: "GET",
 			headers: {
 				"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
-				"x-rapidapi-host": "imdb8.p.rapidapi.com"
+				"x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com"
 			}
 		})
-			.then(response => {
-				console.log(response);
-				return response.json();
-			})
-			.then(data => {
-				console.log(data);
-				setTopPopularTitles(data);
-			})
+			.then(response => response.json())
+			.then(data => setPopularMovies(data.movie_results))
 			.catch(err => {
 				console.error(err);
 			});
 	}, []);
 
+	useEffect(
+		() => {
+			if (movieDetails.length < 1) {
+				popularMovies.map((movie, ind) => {
+					fetch("https://www.omdbapi.com/?apikey=aab1d9d2&i=" + movie.imdb_id)
+						.then(response => response.json())
+						.then(data => setMovieDetails({ ...movieDetails, [movie.imdb_id]: data }))
+						.catch(err => {
+							console.error(err);
+						});
+				});
+			}
+		},
+		[popularMovies]
+	);
+
+	console.log(updatedMovies);
+
 	return (
 		<div className="text-center mt-5">
-			<h1>Top</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button, bootstrap is working
-			</a>
+			<h1>Top Popular Movies in the US</h1>
+			<div className="d-flex flex-wrap">
+				{popularMovies.length > 2
+					? popularMovies.map((movie, ind) => {
+							return <MovieCard key={ind} movie={movie} />;
+					  })
+					: "Loading..."}
+			</div>
 		</div>
 	);
 };
