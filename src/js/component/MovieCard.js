@@ -6,7 +6,7 @@ export const MovieCard = props => {
 	return (
 		<div className="text-center mt-5">
 			<div className="card" style={{ width: "18rem" }}>
-				<img class="card-img-top" src="..." alt="Card image cap" />
+				<img className="card-img-top" src={props.poster} alt="Card image cap" />
 				<div className="card-body">
 					<h5 className="card-title">{props.movie.title}</h5>
 					<h6 className="card-subtitle mb-2 text-muted">{props.movie.year}</h6>
@@ -21,5 +21,6 @@ export const MovieCard = props => {
 };
 
 MovieCard.propTypes = {
-	movie: PropTypes.object
+	movie: PropTypes.object,
+	poster: PropTypes.string
 };
