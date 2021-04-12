@@ -82,9 +82,9 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Top Popular Movies in the US</h1>
+			<h1>Top Box Office Movies in the US</h1>
 			<div className="d-flex flex-wrap">
-				{popularMovies.length > 2
+				{popularMovies.length > 2 && movieDetails.length > 9
 					? popularMovies.map((movie, ind) => {
 							return (
 								<MovieCard
@@ -95,6 +95,9 @@ export const Home = () => {
 									boxOffice={movie.boxOffice}
 								/>
 							);
+
+							let details = movieDetails[ind];
+							return <MovieCard key={ind} movie={movie} poster={details && details["Poster"]} />;
 					  })
 					: "Loading..."}
 			</div>

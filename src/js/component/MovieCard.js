@@ -26,5 +26,7 @@ MovieCard.propTypes = {
 	title: PropTypes.string,
 	year: PropTypes.number,
 	boxOffice: PropTypes.string,
-	plot: PropTypes.string
+    plot: PropTypes.string,
+	movie: PropTypes.object,
+
 };
