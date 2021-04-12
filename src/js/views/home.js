@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 
 import { MovieCard } from "../component/MovieCard";
 import "../../styles/home.scss";
@@ -7,11 +7,14 @@ export const Home = () => {
 	const [popularMovies, setPopularMovies] = useState([]);
 	const [movieDetails, setMovieDetails] = useState([]);
 
-	async function fetchMovies() {
-		console.log("First Effect");
+	const apikey = "6de49d8b";
 
-		console.log("Fetching...");
-		await fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-recently-added-movies", {
+	async function fetchMovies() {
+		console.log("fetchMovies...");
+
+		let newPopularMovies = [];
+
+		await fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-nowplaying-movies&page=1", {
 			method: "GET",
 			headers: {
 				"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
@@ -20,16 +23,14 @@ export const Home = () => {
 		})
 			.then(response => response.json())
 			.then(data => {
-				console.log("data", data);
-
 				setPopularMovies(data.movie_results);
-				//setPopularMovies(data.movie_results);
+				console.log("popularMovies=", popularMovies);
 			})
 			.catch(err => {
 				console.error(err);
 			});
 
-		console.log("End First Effect");
+		console.log("End First Effect, popularMovies=", popularMovies);
 	}
 
 	useEffect(() => {
@@ -37,49 +38,34 @@ export const Home = () => {
 	}, []);
 
 	async function fetchMoviesDetails() {
-		const updatedMovies = Array(popularMovies.length);
+		console.log("fetchMoviesDetails...");
 
-		popularMovies.forEach(async (movie, i) => {
+		let newMovieDetails = [];
+
+		for (let movie of popularMovies) {
+			let movieDetail = {};
 			await fetch(
-				"https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-movies-images-by-imdb&imdb=" + movie.imdb_id,
+				/* 	`https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-movies-images-by-imdb&imdb=${movie.imdb_id}`, */
+				`http://www.omdbapi.com/?t=${movie.title}&plot=full&apikey=${apikey}`,
 				{
-					method: "GET",
-					headers: {
+					method: "GET"
+					/* 		headers: {
 						"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
 						"x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com"
-					}
+					} */
 				}
 			)
-				.then(response => response.json())
+				.then(async response => await response.json())
 				.then(data => {
-					updatedMovies[i] = { ...popularMovies[i], ...data, key: i };
+					newMovieDetails = [...newMovieDetails, data];
 				})
 				.catch(err => {
 					console.error(err);
 				});
-		});
+		}
 
-		setMovieDetails(updatedMovies);
-
-		/*     popularMovies.forEach((movie) => {
-      async function fetchData(movie, i) {
-        const response = await fetch(
-          "https://www.omdbapi.com/?apikey=aab1d9d2&i=" + movie.imdb_id
-        );
-        const data = await response.json();
-        updatedMovies[i] = data;
-      }
-
-      if (movieDetails.length < 1) {
-        popularMovies.map((movie, ind) => {
-          fetchData(movie, ind).then(() => {
-            setMovieDetails([...updatedMovies]);
-          });
-        });
-      }
-    });
- */
-		console.log("Movies=", updatedMovies);
+		console.log("###newMovieDetails=", newMovieDetails);
+		setMovieDetails(newMovieDetails);
 	}
 
 	useEffect(
@@ -91,23 +77,19 @@ export const Home = () => {
 
 	//useEffect(() => fetchMoviesDetails(), [popularMovies]);
 
+	console.log(">>*movieDetails==>", movieDetails[0]);
+	console.log(">>movieDetails.length==>", movieDetails.length);
+	console.log(">>popularMovies==>", popularMovies);
+
 	return (
 		<div className="text-center mt-5">
 			<h1>Top Popular Movies in the US</h1>
+
 			<div className="d-flex flex-wrap">
-				{popularMovies.length > 0
-					? popularMovies.map((movie, ind) => {
-							return (
-								<MovieCard
-									key={ind}
-									poster={movie.poster}
-									title={movie.title}
-									year={movie.year}
-									boxOffice={movie.boxOffice}
-								/>
-							);
-					  })
-					: "Loading..."}
+				{movieDetails.length == 0 && <p>...loading</p>}
+				{movieDetails.length > 0 && <p>...There are {movieDetails.length} movies!</p>}
+				{movieDetails.length > 0 &&
+					movieDetails.map((movie, i) => <MovieCard key={i} title={movie.title} poster={movie.Poster} />)}
 			</div>
 		</div>
 	);
