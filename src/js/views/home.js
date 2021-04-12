@@ -8,7 +8,9 @@ export const Home = () => {
 	const [movieDetails, setMovieDetails] = useState([]);
 
 	useEffect(() => {
-		fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-boxoffice-movies&page=1", {
+        const moviesInStorage = localStorage.getItem("movieList");
+        if(!moviesInStorage){
+            fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-boxoffice-movies&page=1", {
 			method: "GET",
 			headers: {
 				"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
@@ -16,16 +18,19 @@ export const Home = () => {
 			}
 		})
 			.then(response => response.json())
-			.then(data => setPopularMovies(data.movie_results))
+			.then(data => {
+                localStorage.setItem("movieList", JSON.stringify(data.movie_results));
+                setPopularMovies(data.movie_results);
+            })
 			.catch(err => {
 				console.error(err);
 			});
+        }
 	}, []);
 
 	useEffect(
 		() => {
 			const updatedMovies = [];
-
 			async function fetchData(movie, i) {
 				const response = await fetch("https://www.omdbapi.com/?apikey=aab1d9d2&i=" + movie.imdb_id);
 				const data = await response.json();
