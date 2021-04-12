@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 
 import { MovieCard } from "../component/MovieCard";
 import "../../styles/home.scss";
