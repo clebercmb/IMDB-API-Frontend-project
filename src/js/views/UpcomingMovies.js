@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { MovieCard } from "../component/MovieCard";
-import "../../styles/home.scss";
+import "../styles/home.scss";
 
 export const UpcomingMOvies = () => {
 	const [popularMovies, setPopularMovies] = useState([]);

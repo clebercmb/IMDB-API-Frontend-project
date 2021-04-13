@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { BoxOffice } from "./BoxOffice";
 
 export const Home = props => {
 	const { store, actions } = useContext(Context);
@@ -12,7 +13,7 @@ export const Home = props => {
 				<h1 className="display-4 text-warning">Box Office Movies</h1>
 				<Link to="/">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
-						View
+						<BoxOffice />
 					</span>
 				</Link>
 			</div>
