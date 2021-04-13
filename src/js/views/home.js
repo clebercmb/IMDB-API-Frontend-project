@@ -8,24 +8,24 @@ export const Home = () => {
 	const [movieDetails, setMovieDetails] = useState([]);
 
 	useEffect(() => {
-        const moviesInStorage = localStorage.getItem("movieList");
-        if(!moviesInStorage){
-            fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-boxoffice-movies&page=1", {
-			method: "GET",
-			headers: {
-				"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
-				"x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com"
-			}
-		})
-			.then(response => response.json())
-			.then(data => {
-                localStorage.setItem("movieList", JSON.stringify(data.movie_results));
-                setPopularMovies(data.movie_results);
-            })
-			.catch(err => {
-				console.error(err);
-			});
-        }
+		const moviesInStorage = localStorage.getItem("movieList");
+		if (!moviesInStorage) {
+			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-boxoffice-movies&page=1", {
+				method: "GET",
+				headers: {
+					"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
+					"x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com"
+				}
+			})
+				.then(response => response.json())
+				.then(data => {
+					localStorage.setItem("movieList", JSON.stringify(data.movie_results));
+					setPopularMovies(data.movie_results);
+				})
+				.catch(err => {
+					console.error(err);
+				});
+		}
 	}, []);
 
 	useEffect(
