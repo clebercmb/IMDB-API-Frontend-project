@@ -54,7 +54,7 @@ export const Home = () => {
 	return (
 		<div className="text-center mt-5">
 			<h1>Top Box Office Movies in the US</h1>
-			<div className="d-flex flex-wrap">
+			<div className="d-flex flex-wrap justify-content-center">
 				{popularMovies.length > 2 && movieDetails.length > 9
 					? popularMovies.map((movie, ind) => {
 							let details = movieDetails[ind];
