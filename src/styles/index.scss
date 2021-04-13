@@ -1,3 +1,32 @@
+
+@import url("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-nowplaying-movies&page=1");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Poppins" sans-serif;
+    margin: 0;
+}
+
+.Card-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Card {
+    margin: lrem;
+    width: 300px;
+}
+
+.Card img {
+    max-width: 100%;
+}
+
+
 @import url("https:movies-tvshows-data-imdb.rapidapi.com");
 *{
     box-sizing: border-box;
