@@ -3,13 +3,15 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
+import { SearchMovies } from "./views/SearchMovies";
+import { BoxOffice } from "./views/BoxOffice";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-
+import { MovieDetails } from "./views/MovieDetails";
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -22,9 +24,10 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
+						<Route exact path="/moviedetails/:id" component={MovieDetails} />
+						<Route exact path="/" component={Home} />
+						<Route exact path="/searchmovies" component={SearchMovies} />
+						<Route exact path="/boxoffice" component={BoxOffice} />
 						<Route exact path="/demo">
 							<Demo />
 						</Route>
