@@ -8,7 +8,7 @@ export const Home = () => {
 	const [movieDetails, setMovieDetails] = useState([]);
 
 	useEffect(() => {
-		const moviesInStorage = localStorage.getItem("movieList");
+		var moviesInStorage = localStorage.getItem("movieList");
 		if (!moviesInStorage) {
 			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-boxoffice-movies&page=1", {
 				method: "GET",
@@ -25,6 +25,9 @@ export const Home = () => {
 				.catch(err => {
 					console.error(err);
 				});
+		} else {
+			var parsedMovies = JSON.parse(moviesInStorage);
+			setPopularMovies([...parsedMovies]);
 		}
 	}, []);
 
