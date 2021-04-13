@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { MovieCard } from "../component/MovieCard";
 import "../../styles/home.scss";
 
-export const PopularMovies = () => {
+export const BoxOffice = () => {
 	const [popularMovies, setPopularMovies] = useState([]);
 	const [movieDetails, setMovieDetails] = useState([]);
 
@@ -53,7 +53,7 @@ export const PopularMovies = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Popular Movies in the US</h1>
+			<h1>Top Box Office Movies in the US</h1>
 			<div className="d-flex flex-wrap justify-content-center">
 				{popularMovies.length > 2 && movieDetails.length > 9
 					? popularMovies.map((movie, ind) => {
