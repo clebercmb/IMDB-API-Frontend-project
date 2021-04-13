@@ -22,5 +22,9 @@ export const MovieCard = props => {
 
 MovieCard.propTypes = {
 	movie: PropTypes.object,
-	poster: PropTypes.string
+	poster: PropTypes.string,
+	title: PropTypes.string,
+	year: PropTypes.number,
+	boxOffice: PropTypes.string,
+	plot: PropTypes.string
 };
