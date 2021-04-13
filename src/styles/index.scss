@@ -1,3 +1,26 @@
-/* 
-    General Styles
-*/
+@import url("https:movies-tvshows-data-imdb.rapidapi.com");
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: black;
+    color: whitesmoke;
+    font-family: "Roboto", Helvetica, Arial;
+    margin: 0;
+
+}
+
+.card-body{
+    color: grey;
+}
+
+.MovieCard  {
+    width: 300px;
+
+}
+
+.MovieCard img {
+    max-width: 100%;
+}
