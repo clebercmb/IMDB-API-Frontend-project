@@ -8,20 +8,55 @@ export const Single = props => {
 	const params = useParams();
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
+			<h1 className="display-4">Upcoming Movies</h1>
 
 			<hr className="my-4" />
 
 	
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
+					View
 				</span>
 			</Link>
 		</div>
 	);
 };
 
+export const Single = props => {
+	const { store, actions } = useContext(Context);
+	const params = useParams();
+	return (
+		<div className="jumbotron">
+			<h1 className="display-4">Popular Movies</h1>
+
+			<hr className="my-4" />
+
+			<Link to="/">
+				<span className="btn btn-primary btn-lg" href="#" role="button">
+					View
+				</span>
+			</Link>
+		</div>
+	);
+};
+
+export const Single = props => {
+	const { store, actions } = useContext(Context);
+	const params = useParams();
+	return (
+		<div className="jumbotron">
+			<h1 className="display-4">Trending Movies</h1>
+
+			<hr className="my-4" />
+
+			<Link to="/">
+				<span className="btn btn-primary btn-lg" href="#" role="button">
+				   View
+				</span>
+			</Link>
+		</div>
+	);
+};
 Single.propTypes = {
 	match: PropTypes.object
 };

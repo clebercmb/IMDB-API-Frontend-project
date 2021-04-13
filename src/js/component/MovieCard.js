@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import "../../styles/home.scss";
 import { Link } from "react-router-dom";
+
 export const MovieCard = props => {
 	return (
 		<div className="text-center mt-5">

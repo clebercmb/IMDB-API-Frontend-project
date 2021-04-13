@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
+import { Home } from "./views/BoxOffice";
 import { Home } from "./views/home";
 import { SearchMovies } from "./views/SearchMovies";
 import { BoxOffice } from "./views/BoxOffice";
