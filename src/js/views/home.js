@@ -7,9 +7,9 @@ export const Home = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
-		<div className="container-fluid">
+		<div className="container">
 			<div className="jumbotron bg-dark">
-				<h1 className="display-4 text-warning">Box Office Movies</h1>
+				<h1 className="text-warning">Box Office Movies</h1>
 				<Link to="/">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
 						View
@@ -17,7 +17,7 @@ export const Home = props => {
 				</Link>
 			</div>
 			<div className="jumbotron bg-dark">
-				<h1 className="display-4 text-warning">Upcoming Movies</h1>
+				<h1 className="text-warning">Upcoming Movies</h1>
 				<Link to="/">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
 						View
@@ -25,7 +25,7 @@ export const Home = props => {
 				</Link>
 			</div>
 			<div className="jumbotron bg-dark">
-				<h1 className="display-4 text-warning">Trending Movies</h1>
+				<h1 className="text-warning">Trending Movies</h1>
 				<Link to="/">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
 						View
@@ -33,7 +33,7 @@ export const Home = props => {
 				</Link>
 			</div>
 			<div className="jumbotron bg-dark">
-				<h1 className="display-4 text-warning">Popular Movies</h1>
+				<h1 className="text-warning">Popular Movies</h1>
 				<Link to="/">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
 						View
@@ -41,7 +41,7 @@ export const Home = props => {
 				</Link>
 			</div>
 			<div className="jumbotron bg-dark">
-				<h1 className="display-4 text-warning">Upcoming Movies</h1>
+				<h1 className="text-warning">International Movies</h1>
 				<Link to="/">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
 						View
