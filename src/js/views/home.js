@@ -50,7 +50,16 @@ export const Home = () => {
 				{popularMovies.length > 2 && movieDetails.length > 9
 					? popularMovies.map((movie, ind) => {
 							let details = movieDetails[ind];
-							return <MovieCard key={ind} movie={movie} poster={details && details["Poster"]} />;
+							return (
+								<MovieCard
+									key={ind}
+									movie={movie}
+									/* plot={details && details["Plot"]} */
+									poster={details && details["Poster"]}
+									title={details && details["Title"]}
+									imdbRating={details && details["imdbRating"]}
+								/>
+							);
 					  })
 					: "Loading..."}
 			</div>
