@@ -3,60 +3,55 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = props => {
+export const Home = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
-		<div className="jumbotron">
-			<h1 className="display-4">Upcoming Movies</h1>
-
-			<hr className="my-4" />
-
-	
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					View
-				</span>
-			</Link>
+		<div className="container-fluid">
+			<div className="jumbotron bg-dark">
+				<h1 className="display-4 text-warning">Box Office Movies</h1>
+				<Link to="/">
+					<span className="btn btn-primary btn-lg" href="#" role="button">
+						View
+					</span>
+				</Link>
+			</div>
+			<div className="jumbotron bg-dark">
+				<h1 className="display-4 text-warning">Upcoming Movies</h1>
+				<Link to="/">
+					<span className="btn btn-primary btn-lg" href="#" role="button">
+						View
+					</span>
+				</Link>
+			</div>
+			<div className="jumbotron bg-dark">
+				<h1 className="display-4 text-warning">Trending Movies</h1>
+				<Link to="/">
+					<span className="btn btn-primary btn-lg" href="#" role="button">
+						View
+					</span>
+				</Link>
+			</div>
+			<div className="jumbotron bg-dark">
+				<h1 className="display-4 text-warning">Popular Movies</h1>
+				<Link to="/">
+					<span className="btn btn-primary btn-lg" href="#" role="button">
+						View
+					</span>
+				</Link>
+			</div>
+			<div className="jumbotron bg-dark">
+				<h1 className="display-4 text-warning">Upcoming Movies</h1>
+				<Link to="/">
+					<span className="btn btn-primary btn-lg" href="#" role="button">
+						View
+					</span>
+				</Link>
+			</div>
 		</div>
 	);
 };
 
-export const Single = props => {
-	const { store, actions } = useContext(Context);
-	const params = useParams();
-	return (
-		<div className="jumbotron">
-			<h1 className="display-4">Popular Movies</h1>
-
-			<hr className="my-4" />
-
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					View
-				</span>
-			</Link>
-		</div>
-	);
-};
-
-export const Single = props => {
-	const { store, actions } = useContext(Context);
-	const params = useParams();
-	return (
-		<div className="jumbotron">
-			<h1 className="display-4">Trending Movies</h1>
-
-			<hr className="my-4" />
-
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-				   View
-				</span>
-			</Link>
-		</div>
-	);
-};
-Single.propTypes = {
+Home.propTypes = {
 	match: PropTypes.object
 };
