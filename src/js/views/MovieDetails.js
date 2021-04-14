@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
-import "../../styles/demo.scss";
+//import "../styles/demo.scss";
 
 export const MovieDetails = props => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container">
-			Welcome To Movie Wizzzzz
+		<div className="container MovieDetails-container">
+			Welcome To Movie Wiz
 			<div className="card mb-3" style={{ maxWidth: "540px" }}>
 				<div className="row g-0">
 					<div className="col-md-4" />

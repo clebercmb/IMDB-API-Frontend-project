@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { MovieCard } from "../component/MovieCard";
-import "../../styles/home.scss";
+import "../styles/home.scss";
 
 export const BoxOffice = () => {
 	const [popularMovies, setPopularMovies] = useState([]);
@@ -58,7 +58,14 @@ export const BoxOffice = () => {
 				{popularMovies.length > 2 && movieDetails.length > 9
 					? popularMovies.map((movie, ind) => {
 							let details = movieDetails[ind];
-							return <MovieCard key={ind} movie={movie} poster={details && details["Poster"]} />;
+							return (
+								<MovieCard
+									key={ind}
+									movie={movie}
+									poster={details && details["Poster"]}
+									imdbRating={details && details["imdbRating"]}
+								/>
+							);
 					  })
 					: "Loading..."}
 			</div>
