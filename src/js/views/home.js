@@ -2,7 +2,9 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { BoxOffice } from "./BoxOffice";
+import { PopularMovies } from "./PopularMovies";
+import { InternationalMovies } from "./InternationalMovies";
+
 
 export const Home = props => {
 	const { store, actions } = useContext(Context);
@@ -37,7 +39,7 @@ export const Home = props => {
 				<h1 className="display-4 text-warning">Popular Movies</h1>
 				<Link to="/popularmovies">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
-						View
+						<PopularMovies />
 					</span>
 				</Link>
 			</div>
@@ -45,7 +47,7 @@ export const Home = props => {
 				<h1 className="display-4 text-warning">International Movies</h1>
 				<Link to="/">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
-						View
+						<InternationalMovies />
 					</span>
 				</Link>
 			</div>
