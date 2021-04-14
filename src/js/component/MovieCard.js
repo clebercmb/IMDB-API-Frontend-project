@@ -9,13 +9,13 @@ export const MovieCard = props => {
 				<div className="card" style={{ width: "18rem" }}>
 					<img className="card-img-top" src={props.poster} alt="Card image cap" />
 					<div className="card-body moviecard-div">
-						<h5 className="card-title">{props.title}</h5>
-						<h6 className="card-subtile mb-2 text-muted">{props.year}</h6>
+						<h5 className="card-title">{props.movie.title}</h5>
+						<h6 className="card-subtile mb-2 text-muted">{props.movie.year}</h6>
 						<p className="card-text">{props.boxOffice}</p>
-						<a href="#" className="card-link">
+						<span href="#" className="card-link">
 							IMDB Rating:
 							{props.imdbRating}
-						</a>
+						</span>
 					</div>
 				</div>
 			</Link>
