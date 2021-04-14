@@ -10,7 +10,7 @@ export const MovieDetails = props => {
 
 	return (
 		<div className="container MovieDetails-container">
-			Welcome To Movie Wiz
+			Welcome To Movie Wizzard
 			<div className="card mb-3" style={{ maxWidth: "540px" }}>
 				<div className="row g-0">
 					<div className="col-md-4" />

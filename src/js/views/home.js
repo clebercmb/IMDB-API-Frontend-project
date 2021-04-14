@@ -5,7 +5,6 @@ import { Context } from "../store/appContext";
 import { PopularMovies } from "./PopularMovies";
 import { InternationalMovies } from "./InternationalMovies";
 
-
 export const Home = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
@@ -93,7 +92,7 @@ export const Home = props => {
 				<h1 className="display-4 text-warning">Box Office Movies</h1>
 				<Link to="/boxoffice">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
-						<BoxOffice />
+						VIEW MOVIES
 					</span>
 				</Link>
 			</div>
