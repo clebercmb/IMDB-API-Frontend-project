@@ -8,7 +8,7 @@ export const TrendingMovies = () => {
 	const [movieDetails, setMovieDetails] = useState([]);
 
 	useEffect(() => {
-		var moviesInStorage = localStorage.getItem("movieList");
+		var moviesInStorage = localStorage.getItem("trendingMovies");
 		if (!moviesInStorage) {
 			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-trending-movies&page=1", {
 				method: "GET",
@@ -19,7 +19,7 @@ export const TrendingMovies = () => {
 			})
 				.then(response => response.json())
 				.then(data => {
-					localStorage.setItem("movieList", JSON.stringify(data.movie_results));
+					localStorage.setItem("trendingMovies", JSON.stringify(data.movie_results));
 					setPopularMovies(data.movie_results);
 				})
 				.catch(err => {
