@@ -3,20 +3,23 @@ import React, { useEffect, useState } from "react";
 import { MovieCard } from "../component/MovieCard";
 import "../../styles/home.scss";
 
-export const PopularMovies = () => {
+export const InternationalMovies = () => {
 	const [popularMovies, setPopularMovies] = useState([]);
 	const [movieDetails, setMovieDetails] = useState([]);
 
 	useEffect(() => {
 		var moviesInStorage = localStorage.getItem("movieList");
 		if (!moviesInStorage) {
-			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-popular-movies&page=1&year=2020", {
-				method: "GET",
-				headers: {
-					"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
-					"x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com"
+			fetch(
+				"https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-recently-added-movies-bycountry&country=us&page=1",
+				{
+					method: "GET",
+					headers: {
+						"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
+						"x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com"
+					}
 				}
-			})
+			)
 				.then(response => response.json())
 				.then(data => {
 					localStorage.setItem("movieList", JSON.stringify(data.movie_results));
