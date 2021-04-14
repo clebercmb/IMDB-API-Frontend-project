@@ -9,11 +9,11 @@ export const Home = props => {
 	const params = useParams();
 	return (
 		<div className="container">
-			<div className="jumbotron bg-dark">
+			<div className="jumbotron bg-dark" id="popout">
 				<h1 className="display-4 text-warning">Box Office Movies</h1>
 				<Link to="/boxoffice">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
-						<BoxOffice />
+						View
 					</span>
 				</Link>
 			</div>
