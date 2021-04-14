@@ -8,7 +8,7 @@ export const UpcomingMovies = () => {
 	const [movieDetails, setMovieDetails] = useState([]);
 
 	useEffect(() => {
-		var moviesInStorage = localStorage.getItem("movieList");
+		var moviesInStorage = localStorage.getItem("upcomingMovies");
 		if (!moviesInStorage) {
 			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-upcoming-movies&page=1", {
 				method: "GET",
@@ -19,7 +19,7 @@ export const UpcomingMovies = () => {
 			})
 				.then(response => response.json())
 				.then(data => {
-					localStorage.setItem("movieList", JSON.stringify(data.movie_results));
+					localStorage.setItem("upcomingMovies", JSON.stringify(data.movie_results));
 					setPopularMovies(data.movie_results);
 				})
 				.catch(err => {

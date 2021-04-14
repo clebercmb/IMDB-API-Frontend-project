@@ -2,16 +2,13 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { PopularMovies } from "./PopularMovies";
-import { InternationalMovies } from "./InternationalMovies";
-import "../styles/index.scss";
 
 export const Home = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
 		<div className="container-fluid">
-			<h1 className="display-3">Welcome to Movie Wizz</h1>
+			<h1 className="display-3">Welcome to Movie Wizzard</h1>
 
 			<div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
 				<div className="carousel-indicators">
@@ -93,7 +90,7 @@ export const Home = props => {
 				<h1 className="display-4 text-warning">Box Office Movies</h1>
 				<Link to="/boxoffice">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
-						View
+						VIEW
 					</span>
 				</Link>
 			</div>
@@ -101,7 +98,7 @@ export const Home = props => {
 				<h1 className="display-4 text-warning">Upcoming Movies</h1>
 				<Link to="/upcomingmovies">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
-						View
+						VIEW
 					</span>
 				</Link>
 			</div>
@@ -109,7 +106,7 @@ export const Home = props => {
 				<h1 className="display-4 text-warning">Trending Movies</h1>
 				<Link to="/trendingmovies">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
-						View
+						VIEW
 					</span>
 				</Link>
 			</div>
@@ -117,15 +114,15 @@ export const Home = props => {
 				<h1 className="display-4 text-warning">Popular Movies</h1>
 				<Link to="/popularmovies">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
-						View
+						VIEW
 					</span>
 				</Link>
 			</div>
 			<div className="jumbotron bg-dark">
 				<h1 className="display-4 text-warning">International Movies</h1>
-				<Link to="/">
+				<Link to="/internationalmovies">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
-						View
+						VIEW
 					</span>
 				</Link>
 			</div>

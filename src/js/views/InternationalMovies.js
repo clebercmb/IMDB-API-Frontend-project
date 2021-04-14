@@ -6,7 +6,7 @@ export const InternationalMovies = () => {
 	const [movieDetails, setMovieDetails] = useState([]);
 
 	useEffect(() => {
-		var moviesInStorage = localStorage.getItem("movieList");
+		var moviesInStorage = localStorage.getItem("internationalMovies");
 		if (!moviesInStorage) {
 			fetch(
 				"https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-recently-added-movies-bycountry&country=us&page=1",
@@ -20,7 +20,7 @@ export const InternationalMovies = () => {
 			)
 				.then(response => response.json())
 				.then(data => {
-					localStorage.setItem("movieList", JSON.stringify(data.movie_results));
+					localStorage.setItem("internationalMovies", JSON.stringify(data.movie_results));
 					setPopularMovies(data.movie_results);
 				})
 				.catch(err => {
@@ -54,7 +54,7 @@ export const InternationalMovies = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Popular Movies in the US</h1>
+			<h1>Upcoming International Movies</h1>
 			<div className="d-flex flex-wrap justify-content-center">
 				{popularMovies.length > 2 && movieDetails.length > 9
 					? popularMovies.map((movie, ind) => {
