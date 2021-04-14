@@ -16,6 +16,10 @@ export const MovieCard = props => {
 							IMDB Rating:
 							{props.imdbRating}
 						</a>
+						<a href="#" className="card-link">
+							Year:
+							{props.year}
+						</a>
 					</div>
 				</div>
 			</Link>
