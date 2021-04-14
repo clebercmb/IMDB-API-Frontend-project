@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { MovieCard } from "../component/MovieCard";
-import "../../styles/home.scss";
+import "../styles/home.scss";
 
 export const PopularMovies = () => {
 	const [popularMovies, setPopularMovies] = useState([]);
@@ -10,7 +10,7 @@ export const PopularMovies = () => {
 	useEffect(() => {
 		var moviesInStorage = localStorage.getItem("movieList");
 		if (!moviesInStorage) {
-			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-boxoffice-movies&page=1", {
+			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-popular-movies&page=1&year=2020", {
 				method: "GET",
 				headers: {
 					"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",

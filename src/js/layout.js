@@ -12,6 +12,11 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { MovieDetails } from "./views/MovieDetails";
+import { PopularMovies } from "./views/PopularMovies";
+import { InternationalMovies } from "./views/InternationalMovies";
+import { TrendingMovies } from "./views/TrendingMovies";
+import { UpcomingMovies } from "./views/UpcomingMovies";
+
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -28,6 +33,10 @@ const Layout = () => {
 						<Route exact path="/" component={Home} />
 						<Route exact path="/searchmovies" component={SearchMovies} />
 						<Route exact path="/boxoffice" component={BoxOffice} />
+						<Route exact path="/popularmovies" component={PopularMovies} />
+						<Route exact path="/internationalmovies" component={InternationalMovies} />
+						<Route exact path="/trendingmovies" component={TrendingMovies} />
+						<Route exact path="/upcomingmovies" component={UpcomingMovies} />
 						<Route exact path="/demo">
 							<Demo />
 						</Route>

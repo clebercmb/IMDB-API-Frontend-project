@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 
 import { MovieCard } from "../component/MovieCard";
-import "../../styles/home.scss";
+import "../styles/home.scss";
 
-export const UpcomingMOvies = () => {
+export const UpcomingMovies = () => {
 	const [popularMovies, setPopularMovies] = useState([]);
 	const [movieDetails, setMovieDetails] = useState([]);
 
 	useEffect(() => {
 		var moviesInStorage = localStorage.getItem("movieList");
 		if (!moviesInStorage) {
-			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-boxoffice-movies&page=1", {
+			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-upcoming-movies&page=1", {
 				method: "GET",
 				headers: {
 					"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
