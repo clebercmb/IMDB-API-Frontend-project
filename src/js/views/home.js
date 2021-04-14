@@ -11,7 +11,7 @@ export const Home = props => {
 		<div className="container">
 			<div className="jumbotron bg-dark">
 				<h1 className="display-4 text-warning">Box Office Movies</h1>
-				<Link to="/">
+				<Link to="/boxoffice">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
 						<BoxOffice />
 					</span>
@@ -19,7 +19,7 @@ export const Home = props => {
 			</div>
 			<div className="jumbotron bg-dark">
 				<h1 className="display-4 text-warning">Upcoming Movies</h1>
-				<Link to="/">
+				<Link to="/upcomingmovies">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
 						View
 					</span>
@@ -27,7 +27,7 @@ export const Home = props => {
 			</div>
 			<div className="jumbotron bg-dark">
 				<h1 className="display-4 text-warning">Trending Movies</h1>
-				<Link to="/">
+				<Link to="/trendingmovies">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
 						View
 					</span>
@@ -35,7 +35,7 @@ export const Home = props => {
 			</div>
 			<div className="jumbotron bg-dark">
 				<h1 className="display-4 text-warning">Popular Movies</h1>
-				<Link to="/">
+				<Link to="/popularmovies">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
 						View
 					</span>
