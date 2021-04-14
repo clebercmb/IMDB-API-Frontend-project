@@ -16,6 +16,7 @@ import { PopularMovies } from "./views/PopularMovies";
 import { InternationalMovies } from "./views/InternationalMovies";
 import { TrendingMovies } from "./views/TrendingMovies";
 import { UpcomingMovies } from "./views/UpcomingMovies";
+
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
