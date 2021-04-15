@@ -19,7 +19,7 @@ export const SearchMovies = props => {
 				</div>
 				<input
 					type="text"
-					className="form-control mr-4"
+					className="form-control h-auto mr-4"
 					placeholder="Search by title..."
 					aria-label="Title"
 					aria-describedby="basic-addon1"
@@ -31,11 +31,12 @@ export const SearchMovies = props => {
 				</div>
 				<input
 					type="text"
-					className="form-control mr-4"
-					placeholder="Include year for more precise results"
+					className="form-control mr-4 h-auto"
+					placeholder="Include year for a more precise result..."
 					aria-label="Year"
 					aria-describedby="basic-addon1"
 				/>
+				<input type="button" className="btn btn-lg btn-secondary text-warning" value="Search" />
 			</div>
 
 			<Link to="/">
