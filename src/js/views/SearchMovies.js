@@ -11,6 +11,32 @@ export const SearchMovies = props => {
 			<h1 className="display-4">Search movies</h1>
 
 			<hr className="my-4" />
+			<div className="input-group mb-3">
+				<div className="input-group-prepend">
+					<span className="input-group-text" id="basic-addon1">
+						Title
+					</span>
+				</div>
+				<input
+					type="text"
+					className="form-control"
+					placeholder="Username"
+					aria-label="Username"
+					aria-describedby="basic-addon1"
+				/>
+				<div className="input-group-prepend">
+					<span className="input-group-text" id="basic-addon1">
+						Year
+					</span>
+				</div>
+				<input
+					type="text"
+					className="form-control"
+					placeholder="Username"
+					aria-label="Username"
+					aria-describedby="basic-addon1"
+				/>
+			</div>
 
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
