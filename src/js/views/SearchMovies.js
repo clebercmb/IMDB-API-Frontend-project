@@ -20,8 +20,8 @@ export const SearchMovies = props => {
 				<input
 					type="text"
 					className="form-control mr-4"
-					placeholder="Username"
-					aria-label="Username"
+					placeholder="Search by title..."
+					aria-label="Title"
 					aria-describedby="basic-addon1"
 				/>
 				<div className="input-group-prepend">
@@ -32,8 +32,8 @@ export const SearchMovies = props => {
 				<input
 					type="text"
 					className="form-control mr-4"
-					placeholder="Username"
-					aria-label="Username"
+					placeholder="Include year for more precise results"
+					aria-label="Year"
 					aria-describedby="basic-addon1"
 				/>
 			</div>
