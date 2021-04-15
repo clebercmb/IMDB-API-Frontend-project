@@ -8,18 +8,18 @@ export const SearchMovies = props => {
 	const params = useParams();
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">Search movies</h1>
+			<h1 className="display-4 text-dark">Search movies</h1>
 
 			<hr className="my-4" />
 			<div className="input-group mb-3">
-				<div className="input-group-prepend">
+				<div className="input-group-prepend ml-4">
 					<span className="input-group-text" id="basic-addon1">
 						Title
 					</span>
 				</div>
 				<input
 					type="text"
-					className="form-control"
+					className="form-control mr-4"
 					placeholder="Username"
 					aria-label="Username"
 					aria-describedby="basic-addon1"
@@ -31,7 +31,7 @@ export const SearchMovies = props => {
 				</div>
 				<input
 					type="text"
-					className="form-control"
+					className="form-control mr-4"
 					placeholder="Username"
 					aria-label="Username"
 					aria-describedby="basic-addon1"
