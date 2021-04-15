@@ -57,34 +57,34 @@ export const Home = props => {
 					</span>
 				</Link>
 			</div>
-			<div className="jumbotron bg-dark">
+			<div className="jumbotron mx-auto w-75 bg-dark d-flex justify-content-between">
 				<h1 className="display-4 text-warning">Upcoming Movies</h1>
 				<Link to="/upcomingmovies">
-					<span className="btn btn-primary btn-lg" href="#" role="button">
+					<span className="btn btn-primary btn-lg px-5" href="#" role="button">
 						VIEW
 					</span>
 				</Link>
 			</div>
-			<div className="jumbotron bg-dark">
+			<div className="jumbotron mx-auto w-75 bg-dark d-flex justify-content-between">
 				<h1 className="display-4 text-warning">Trending Movies</h1>
 				<Link to="/trendingmovies">
-					<span className="btn btn-primary btn-lg" href="#" role="button">
+					<span className="btn btn-primary btn-lg px-5" href="#" role="button">
 						VIEW
 					</span>
 				</Link>
 			</div>
-			<div className="jumbotron bg-dark">
+			<div className="jumbotron mx-auto w-75 bg-dark d-flex justify-content-between">
 				<h1 className="display-4 text-warning">Popular Movies</h1>
 				<Link to="/popularmovies">
-					<span className="btn btn-primary btn-lg" href="#" role="button">
+					<span className="btn btn-primary btn-lg px-5" href="#" role="button">
 						VIEW
 					</span>
 				</Link>
 			</div>
-			<div className="jumbotron bg-dark">
+			<div className="jumbotron mx-auto w-75 bg-dark d-flex justify-content-between">
 				<h1 className="display-4 text-warning">International Movies</h1>
 				<Link to="/internationalmovies">
-					<span className="btn btn-primary btn-lg" href="#" role="button">
+					<span className="btn btn-primary btn-lg px-5" href="#" role="button">
 						VIEW
 					</span>
 				</Link>
