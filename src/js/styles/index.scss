@@ -3,6 +3,7 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 @import url("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-nowplaying-movies&page=1");
 
 * {
@@ -13,9 +14,15 @@
 body{
     background-color: black;
     color: whitesmoke;
-    font-family: "Roboto", Helvetica, Arial;
+    // font-family: "Roboto", Helvetica, Arial;
+    font-family: 'Zen Dots', cursive;
     margin: 0;
 
+}
+
+.carouselImg {
+    height: auto;
+    width: 100vw;
 }
 
 .Card-container{

@@ -10,7 +10,7 @@ export const PopularMovies = () => {
 	useEffect(() => {
 		var moviesInStorage = localStorage.getItem("popularMovies");
 		if (!moviesInStorage) {
-			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-popular-movies&page=1&year=2020", {
+			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-popular-movies&page=1", {
 				method: "GET",
 				headers: {
 					"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
@@ -58,7 +58,14 @@ export const PopularMovies = () => {
 				{popularMovies.length > 2 && movieDetails.length > 9
 					? popularMovies.map((movie, ind) => {
 							let details = movieDetails[ind];
-							return <MovieCard key={ind} movie={movie} poster={details && details["Poster"]} />;
+							return (
+								<MovieCard
+									key={ind}
+									movie={movie}
+									imdbRating={details && details["imdbRating"]}
+									poster={details && details["Poster"]}
+								/>
+							);
 					  })
 					: "Loading..."}
 			</div>
