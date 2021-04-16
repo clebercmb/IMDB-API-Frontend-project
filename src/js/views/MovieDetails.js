@@ -32,16 +32,17 @@ export const MovieDetails = props => {
 
 	return (
 		<div className="container MovieDetails-container">
-			Movie Details
+			<h1 className="pb-4">Movie Details</h1>
 			<div className="card mb-3 bg-dark" style={{ maxWidth: "80vw" }}>
 				<div className="row g-0">
 					<div className="col-md-4">
-						<img src="" alt="" />
+						<img src={props.location.state.poster} alt="" />
 					</div>
 					<div className="col-md-8">
-						<h2>Title: {movieDetails && movieDetails.Title}</h2>
-						<p> Year: {movieDetails && movieDetails.Year}</p>
+						<h2>{props.location.state.movie.title}</h2>
+						<p>{props.location.state.movie.year}</p>
 						<p> Director: {movieDetails && movieDetails.Director} </p>
+						<p>IMDB Rating: {props.location.state.imdbRating}</p>
 					</div>
 				</div>
 			</div>
@@ -67,6 +68,7 @@ export const MovieDetails = props => {
 };
 
 MovieDetails.propTypes = {
+	location: PropTypes.object,
 	poster: PropTypes.string,
 	title: PropTypes.string,
 	year: PropTypes.number,
