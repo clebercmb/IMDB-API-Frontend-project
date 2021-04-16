@@ -1,11 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const SearchMovies = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+	const location = useLocation();
+	const [title, setTitle] = useState("");
+	const [year, setYear] = useState("");
+
+	console.log(location);
+
 	return (
 		<div className="jumbotron">
 			<h1 className="display-4 text-dark">Search movies</h1>
@@ -23,6 +29,7 @@ export const SearchMovies = props => {
 					placeholder="Search by title..."
 					aria-label="Title"
 					aria-describedby="basic-addon1"
+					onChange={e => setTitle(e.target.value)}
 				/>
 				<div className="input-group-prepend">
 					<span className="input-group-text" id="basic-addon1">
@@ -35,12 +42,13 @@ export const SearchMovies = props => {
 					placeholder="Include year for a more precise result..."
 					aria-label="Year"
 					aria-describedby="basic-addon1"
+					onChange={e => setYear(e.target.value)}
 				/>
 				<input type="button" className="btn btn-lg btn-secondary text-warning" value="Search" />
 			</div>
 
 			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
+				<span className="btn btn-primary btn-lg mt-5" href="#" role="button">
 					Back home
 				</span>
 			</Link>
