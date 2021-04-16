@@ -39,9 +39,9 @@ export const MovieDetails = props => {
 						<img src="" alt="" />
 					</div>
 					<div className="col-md-8">
-						<h2>Title</h2>
-						<p> Year</p>
-						<p> Director </p>
+						<h2>Title: {movieDetails && movieDetails.Title}</h2>
+						<p> Year: {movieDetails && movieDetails.Year}</p>
+						<p> Director: {movieDetails && movieDetails.Director} </p>
 					</div>
 				</div>
 			</div>
