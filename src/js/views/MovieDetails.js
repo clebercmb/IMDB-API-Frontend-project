@@ -20,34 +20,41 @@ export const MovieDetails = props => {
 						<h2>Title</h2>
 						<p> Year</p>
 						<p> Director </p>
+						<p> RunTime </p>
+						<p> Countries </p>
 					</div>
 				</div>
 			</div>
 			<div className="info" style={{ maxWidth: "540px" }}>
 				<div className="row g-0">
 					<h1>Cast</h1>
-					<div className="col-md-4" />
-					<div className="col-md-8" />
+					<div className="jumbotron mx-auto w-75 bg-dark d-block justify-content-between">
+						<h1 className="display-4 text-warning">Trending Movies</h1>
+					</div>
 				</div>
 				<div className="row g-0">
-					<h2>Trivia</h2>
-					<div className="col-md-4" />
-					<div className="col-md-8" />
+					<h1>Rating</h1>
+					<div className="jumbotron mx-auto w-75 bg-dark d-block justify-content-between">
+						<h1 className="display-4 text-warning">Trending Movies</h1>
+					</div>
 				</div>
 				<div className="row g-0">
-					<h3>User Reviews</h3>
-					<div className="col-md-4" />
-					<div className="col-md-8" />
+					<h1>Plot</h1>
+					<div className="jumbotron mx-auto w-75 bg-dark d-block justify-content-between">
+						<h1 className="display-4 text-warning">Trending Movies</h1>
+					</div>
 				</div>
-				<div className="row g-0">
-					<h4>IMDbPro</h4>
-					<div className="col-md-4" />
-					<div className="col-md-8" />
+			</div>
+			<div className="row g-0">
+				<h1>Writers</h1>
+				<div className="jumbotron mx-auto w-75 bg-dark d-block justify-content-between">
+					<h1 className="display-4 text-warning">Trending Movies</h1>
 				</div>
-				<div className="row g-0">
-					<h5>More!!!</h5>
-					<div className="col-md-4" />
-					<div className="col-md-8" />
+			</div>
+			<div className="row g-0">
+				<h1>Production</h1>
+				<div className="jumbotron mx-auto w-75 bg-dark d-block justify-content-between">
+					<h1 className="display-4 text-warning">Trending Movies</h1>
 				</div>
 			</div>
 		</div>

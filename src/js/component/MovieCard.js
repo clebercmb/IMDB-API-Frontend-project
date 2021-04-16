@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const MovieCard = props => {
 	return (
 		<div className="text-center mt-5 moviecard-container">
-			<Link to="/moviedetails/1">
+			<Link to={`/moviedetails/${props.movie.imdb_id}`}>
 				<div className="card" style={{ width: "18rem" }}>
 					<img className="card-img-top" src={props.poster} alt="Card image cap" />
 					<div className="card-body moviecard-div">
