@@ -9,6 +9,13 @@ export const SearchMovies = props => {
 	const location = useLocation();
 	const [title, setTitle] = useState("");
 	const [year, setYear] = useState("");
+	const [result, setResult] = useState({});
+
+	async function fetchData(title, year) {
+		const response = await fetch(`https://www.omdbapi.com/?apikey=aab1d9d2&t=${title}`);
+		const data = await response.json();
+		setResult(data);
+	}
 
 	console.log(location);
 
@@ -44,9 +51,21 @@ export const SearchMovies = props => {
 					aria-describedby="basic-addon1"
 					onChange={e => setYear(e.target.value)}
 				/>
-				<input type="button" className="btn btn-lg btn-secondary text-warning" value="Search" />
+				<input
+					type="button"
+					className="btn btn-lg btn-secondary text-warning"
+					onClick={() => fetchData(title)}
+					value="Search"
+				/>
 			</div>
-
+			{result ? (
+				<div className="d-block text-dark">
+					<h1>{result.Title}</h1>
+					<p>{result.Year}</p>
+					<p>{result.Actors}</p>
+					<p>{result.Plot}</p>
+				</div>
+			) : null}
 			<Link to="/">
 				<span className="btn btn-primary btn-lg mt-5" href="#" role="button">
 					Back home

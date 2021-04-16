@@ -10,7 +10,7 @@ export const PopularMovies = () => {
 	useEffect(() => {
 		var moviesInStorage = localStorage.getItem("popularMovies");
 		if (!moviesInStorage) {
-			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-popular-movies&page=1&year=2020", {
+			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-popular-movies&page=1", {
 				method: "GET",
 				headers: {
 					"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
