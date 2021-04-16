@@ -5,7 +5,11 @@ import { Link } from "react-router-dom";
 export const MovieCard = props => {
 	return (
 		<div className="text-center mt-5 moviecard-container">
-			<Link to={`/moviedetails/${props.movie.imdb_id}`}>
+			<Link
+				to={{
+					pathname: `/moviedetails/${props.movie.imdb_id}`,
+					state: props
+				}}>
 				<div className="card" style={{ width: "18rem" }}>
 					<img className="card-img-top" src={props.poster} alt="Card image cap" />
 					<div className="card-body moviecard-div">
@@ -30,5 +34,6 @@ MovieCard.propTypes = {
 	boxOffice: PropTypes.string,
 	plot: PropTypes.string,
 	movie: PropTypes.object,
-	imdbRating: PropTypes.string
+	imdbRating: PropTypes.string,
+	imdb_id: PropTypes.string
 };
