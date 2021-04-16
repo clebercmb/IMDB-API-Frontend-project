@@ -7,6 +7,7 @@ import Carousel from "react-bootstrap/Carousel";
 export const Home = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+
 	return (
 		<div className="container-fluid">
 			<h1 className="display-3 text-center">Welcome to Movie Wizzard</h1>

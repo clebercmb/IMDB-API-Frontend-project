@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 export const MovieDetails = props => {
 	const { store, actions } = useContext(Context);
 	const [movieDetails, setMovieDetails] = useState(null);
+
 	useEffect(() => {
 		//var moviesInStorage = localStorage.getItem("movieList");
 		console.log("match.params.id", props.match);
@@ -30,42 +31,6 @@ export const MovieDetails = props => {
 	}, []);
 
 	return (
-<<<<<<< HEAD
-		<div>
-			{movieDetails && (
-				<div className="container MovieDetails-container">
-					{movieDetails.Title}
-					<div className="card mb-3" style={{ maxWidth: "540px" }}>
-						<div className="row g-0">
-							<div className="col-md-4" />
-							<div className="col-md-8" />
-						</div>
-					</div>
-					<div className="info" style={{ maxWidth: "540px" }}>
-						<div className="row g-0">
-							<h1>Cast</h1>
-							<label className="col-md-12">{movieDetails.Actors}</label>
-						</div>
-						<div className="row g-0">
-							<h2>Plot</h2>
-							<label className="col-md-12">{movieDetails.Plot}</label>
-						</div>
-						<div className="row g-0">
-							<h3>IMBD Rating</h3>
-							<label className="col-md-12">{movieDetails.imdbRating}</label>
-						</div>
-						<div className="row g-0">
-							<h4>IMDbPro</h4>
-							<div className="col-md-4" />
-							<div className="col-md-8" />
-						</div>
-						<div className="row g-0">
-							<h5>More!!!</h5>
-							<div className="col-md-4" />
-							<div className="col-md-8" />
-						</div>
-					</div>
-=======
 		<div className="container MovieDetails-container">
 			Movie Details
 			<div className="card mb-3 bg-dark" style={{ maxWidth: "80vw" }}>
@@ -95,9 +60,8 @@ export const MovieDetails = props => {
 					<h3>User Reviews</h3>
 					<div className="col-md-4" />
 					<div className="col-md-8" />
->>>>>>> 048d7c691c08ffd8ec077e14d888df899a1535d7
 				</div>
-			)}
+			</div>
 		</div>
 	);
 };
