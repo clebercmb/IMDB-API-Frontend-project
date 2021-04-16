@@ -8,7 +8,6 @@ export const MovieCard = props => {
 			<Link
 				to={{
 					pathname: `/moviedetails/${props.movie.imdb_id}`,
-
 					state: props
 				}}>
 				<div className="card" style={{ width: "18rem" }}>
