@@ -23,7 +23,7 @@ export const Home = props => {
 						<p>2021</p>
 					</Carousel.Caption>
 				</Carousel.Item>
-				<Carousel.Item interval={1500}>
+				<Carousel.Item interval={3000}>
 					<img
 						className="carouselImg d-block"
 						src="https://i.ytimg.com/vi/9BPMTr-NS9s/maxresdefault.jpg"
@@ -45,6 +45,18 @@ export const Home = props => {
 					<Carousel.Caption>
 						<h3>The Unholy</h3>
 						<p>2021</p>
+					</Carousel.Caption>
+				</Carousel.Item>
+				<Carousel.Item interval={3000}>
+					<img
+						className="carouselImg d-block"
+						src="https://www.flixwatch.co/wp-content/uploads/81028336.jpg"
+						alt="Second slide"
+					/>
+
+					<Carousel.Caption>
+						<h3>Miss Americana</h3>
+						<p>2020</p>
 					</Carousel.Caption>
 				</Carousel.Item>
 			</Carousel>
