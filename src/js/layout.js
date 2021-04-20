@@ -13,6 +13,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { MovieDetails } from "./views/MovieDetails";
 import { PopularMovies } from "./views/PopularMovies";
+import { SimilarMovies } from "./views/SimilarMovies";
 import { InternationalMovies } from "./views/InternationalMovies";
 import { TrendingMovies } from "./views/TrendingMovies";
 import { UpcomingMovies } from "./views/UpcomingMovies";
@@ -34,6 +35,7 @@ const Layout = () => {
 						<Route exact path="/searchmovies" component={SearchMovies} />
 						<Route exact path="/boxoffice" component={BoxOffice} />
 						<Route exact path="/popularmovies" component={PopularMovies} />
+						<Route exact path="/similarmovies" component={SimilarMovies} />
 						<Route exact path="/internationalmovies" component={InternationalMovies} />
 						<Route exact path="/trendingmovies" component={TrendingMovies} />
 						<Route exact path="/upcomingmovies" component={UpcomingMovies} />
