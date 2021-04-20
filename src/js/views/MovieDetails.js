@@ -75,28 +75,18 @@ export const MovieDetails = props => {
 				</div>
 				<div className="row g-0">
 					<h1>Writers</h1>
-<<<<<<< HEAD
-					<div className="jumbotron mx-auto w-75 bg-dark d-block justify-content-between">
-						<h1 className="display-4 text-warning">Trending Movies</h1>
-=======
 					<div
 						className="jumbotron mx-auto  bg-dark d-block justify-content-between"
 						style={{ width: "80vw" }}>
 						<p className=" text-warning">{movieDetails && movieDetails.Writer}</p>
->>>>>>> dd05b4736dc10a976b89053a8d03e018a4d9d7d4
 					</div>
 				</div>
 				<div className="row g-0">
 					<h1>Production</h1>
-<<<<<<< HEAD
-					<div className="jumbotron mx-auto w-75 bg-dark d-block justify-content-between">
-						<h1 className="display-4 text-warning">Trending Movies</h1>
-=======
 					<div
 						className="jumbotron mx-auto  bg-dark d-block justify-content-between"
 						style={{ width: "80vw" }}>
 						<p className=" text-warning">{movieDetails && movieDetails.Production}</p>
->>>>>>> dd05b4736dc10a976b89053a8d03e018a4d9d7d4
 					</div>
 				</div>
 			</div>
