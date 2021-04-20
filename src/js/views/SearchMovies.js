@@ -12,6 +12,8 @@ export const SearchMovies = props => {
 	const [result, setResult] = useState({});
 
 	async function fetchData(title, year) {
+		let concatenatedTitle = "";
+		for (let i = 0; i < title.length; i++) {}
 		const response = await fetch(`https://www.omdbapi.com/?apikey=aab1d9d2&t=${title}`);
 		const data = await response.json();
 		setResult(data);

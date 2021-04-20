@@ -44,7 +44,6 @@ export const MovieDetails = props => {
 						<p> Director </p>
 						<p> RunTime </p>
 						<p> Countries </p>
-						
 					</div>
 				</div>
 			</div>
@@ -67,17 +66,17 @@ export const MovieDetails = props => {
 						<h1 className="display-4 text-warning">Trending Movies</h1>
 					</div>
 				</div>
-			</div>
-			<div className="row g-0">
-				<h1>Writers</h1>
-				<div className="jumbotron mx-auto w-75 bg-dark d-block justify-content-between">
-					<h1 className="display-4 text-warning">Trending Movies</h1>
+				<div className="row g-0">
+					<h1>Writers</h1>
+					<div className="jumbotron mx-auto w-75 bg-dark d-block justify-content-between">
+						<h1 className="display-4 text-warning">Trending Movies</h1>
+					</div>
 				</div>
-			</div>
-			<div className="row g-0">
-				<h1>Production</h1>
-				<div className="jumbotron mx-auto w-75 bg-dark d-block justify-content-between">
-					<h1 className="display-4 text-warning">Trending Movies</h1>
+				<div className="row g-0">
+					<h1>Production</h1>
+					<div className="jumbotron mx-auto w-75 bg-dark d-block justify-content-between">
+						<h1 className="display-4 text-warning">Trending Movies</h1>
+					</div>
 				</div>
 			</div>
 		</div>
