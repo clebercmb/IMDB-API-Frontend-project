@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from "react";
-
 import { MovieCard } from "../component/MovieCard";
-import "../styles/home.scss";
 
 export const UpcomingMovies = () => {
 	const [popularMovies, setPopularMovies] = useState([]);
 	const [movieDetails, setMovieDetails] = useState([]);
 
 	useEffect(() => {
-		var moviesInStorage = localStorage.getItem("upcomingMovies");
+		var moviesInStorage = localStorage.getItem("internationalMovies");
 		if (!moviesInStorage) {
-			fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-upcoming-movies&page=1", {
-				method: "GET",
-				headers: {
-					"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
-					"x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com"
+			fetch(
+				"https://movies-tvshows-data-imdb.p.rapidapi.com/?type=get-recently-added-movies-bycountry&country=us&page=1",
+				{
+					method: "GET",
+					headers: {
+						"x-rapidapi-key": "da2aafe225mshd2599115ee599ebp1e0ab8jsn5b0724cf5916",
+						"x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com"
+					}
 				}
-			})
+			)
 				.then(response => response.json())
 				.then(data => {
-					localStorage.setItem("upcomingMovies", JSON.stringify(data.movie_results));
+					localStorage.setItem("internationalMovies", JSON.stringify(data.movie_results));
 					setPopularMovies(data.movie_results);
 				})
 				.catch(err => {
@@ -53,7 +54,7 @@ export const UpcomingMovies = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Upcoming Movies</h1>
+			<h1>Upcoming International Movies</h1>
 			<div className="d-flex flex-wrap justify-content-center">
 				{popularMovies.length > 2 && movieDetails.length > 9
 					? popularMovies.map((movie, ind) => {
