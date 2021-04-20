@@ -5,10 +5,6 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { SearchMovies } from "./views/SearchMovies";
 import { BoxOffice } from "./views/BoxOffice";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
-import injectContext from "./store/appContext";
-
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { MovieDetails } from "./views/MovieDetails";
@@ -17,6 +13,8 @@ import { SimilarMovies } from "./views/SimilarMovies";
 import { InternationalMovies } from "./views/InternationalMovies";
 import { TrendingMovies } from "./views/TrendingMovies";
 import { UpcomingMovies } from "./views/UpcomingMovies";
+
+import injectContext from "./store/appContext";
 
 //create your first component
 const Layout = () => {
@@ -39,12 +37,6 @@ const Layout = () => {
 						<Route exact path="/internationalmovies" component={InternationalMovies} />
 						<Route exact path="/trendingmovies" component={TrendingMovies} />
 						<Route exact path="/upcomingmovies" component={UpcomingMovies} />
-						<Route exact path="/demo">
-							<Demo />
-						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
-						</Route>
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
