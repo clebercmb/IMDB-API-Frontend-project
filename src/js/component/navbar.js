@@ -5,7 +5,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar bg-dark navbar-light bg-light mb-3">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1 text-warning">Movie Wizzard</span>
+				<span className="navbar-brand mb-0 display-1 text-warning">Movie Wizzard</span>
 			</Link>
 			<div className="ml-auto">
 				<Link to="/searchmovies">

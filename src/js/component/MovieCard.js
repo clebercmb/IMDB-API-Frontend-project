@@ -10,10 +10,10 @@ export const MovieCard = props => {
 					pathname: `/moviedetails/${props.movie.imdb_id}`,
 					state: props
 				}}>
-				<div className="card" style={{ width: "18rem" }}>
-					<img className="card-img-top" src={props.poster} alt="Card image cap" />
+				<div className="card" style={{ width: "20rem" }}>
+					<img className="card-img-top" src={props.poster} alt="POSTER COMING UP" />
 					<div className="card-body moviecard-div">
-						<h3 className="card-title">{props.movie.title}</h3>
+						<h3 className="card-title text-warning">{props.movie.title}</h3>
 						<h5 className="card-subtile mb-2 text-muted">{props.movie.year}</h5>
 						<p className="card-text">{props.boxOffice}</p>
 						<p className="card-text">IMDB Rating: {props.imdbRating}</p>
