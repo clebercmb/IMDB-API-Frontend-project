@@ -10,14 +10,12 @@
     box-sizing: border-box;
 }
 
-
 body{
     background-color: black;
     color: whitesmoke;
     // font-family: "Roboto", Helvetica, Arial;
     font-family: 'Zen Dots', cursive;
     margin: 0;
-
 }
 
 .carouselImg {
@@ -39,7 +37,6 @@ body{
     max-width: 100%;
 }
 
-
 @import url("https:movies-tvshows-data-imdb.rapidapi.com");
 *{
     box-sizing: border-box;
@@ -60,22 +57,17 @@ body{
     max-width: 100%;
 }
 
-
- .moviecard-container { 
-        // height: 500px;
-        margin: 0px 8px;
-        img{
-            height: 480px;
-        
-        }
-
+.moviecard-container { 
+    margin: 0px 8px;
+    img{
+        height: 480px;
+    
     }
-
+}
 
 .MovieDetails-container {
     color: yellow;
 }
-
 
 #popout:hover{
     background-color: yellow;
