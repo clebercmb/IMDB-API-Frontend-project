@@ -63,6 +63,7 @@ export const BoxOffice = () => {
 									key={ind}
 									movie={movie}
 									poster={details && details["Poster"]}
+									country={details && details["Country"]}
 									imdbRating={details && details["imdbRating"]}
 								/>
 							);

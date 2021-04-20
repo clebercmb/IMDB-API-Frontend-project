@@ -64,6 +64,7 @@ export const TrendingMovies = () => {
 									movie={movie}
 									imdbRating={details && details["imdbRating"]}
 									poster={details && details["Poster"]}
+									country={details && details["Country"]}
 								/>
 							);
 					  })
