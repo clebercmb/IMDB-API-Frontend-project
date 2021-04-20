@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { MovieCard } from "../component/MovieCard";
-import "../styles/home.scss";
 import { useLocation } from "react-router-dom";
 
 export const SimilarMovies = () => {
