@@ -54,7 +54,7 @@ export const UpcomingMovies = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Upcoming International Movies</h1>
+			<h1>Upcoming Movies in US</h1>
 			<div className="d-flex flex-wrap justify-content-center">
 				{popularMovies.length > 2 && movieDetails.length > 9
 					? popularMovies.map((movie, ind) => {
